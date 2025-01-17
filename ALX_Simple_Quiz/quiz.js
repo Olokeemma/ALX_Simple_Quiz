@@ -1,32 +1,41 @@
-// Function declaration for checkAnswer
+let feedback = document.getElementById("feedback");
+
+let button = document.getElementById("submit-answer");
+
+
+
 function checkAnswer() {
-    // Step 1: Declare the correct answer
-    const correctAnswer = "4";  // The correct answer is "4"
 
-    // Step 2: Retrieve the user's selected answer
-    // Use querySelector to select the checked radio button with name="quiz"
-    const userAnswer = document.querySelector('input[name="quiz"]:checked')?.value;
+  let selectedOption = document.querySelector('input[name="quiz"]:checked');
+  
 
-    // Step 3: Compare the user's answer with the correct answer
-    const feedbackElement = document.getElementById("feedback"); // Get the feedback element
+  
+  const correctAnswer = "4"
 
-    // Step 4: Check if the user has selected an answer
-    if (!userAnswer) {
-        feedbackElement.textContent = "Please select an answer.";  // If no answer is selected
-        feedbackElement.style.color = "red";
-    } else if (userAnswer === correctAnswer) {
-        // Step 5: If the user's answer is correct
-        feedbackElement.textContent = "Correct! Well done.";
-        feedbackElement.style.color = "green";
-    } else {
-        // Step 6: If the user's answer is incorrect
-        feedbackElement.textContent = "That's incorrect. Try again!";
-        feedbackElement.style.color = "red";
+  if (selectedOption){
+
+    let userAnswer = selectedOption.value;
+
+    if(userAnswer === correctAnswer){
+      feedback.textContent = "Correct! Well done."
+      feedback.style.color = "green"
+    }else{
+      feedback.textContent = "That's incorrect. Try again!"
+      feedback.style.color = "red"
     }
+
+  }else {
+      feedback.textContent = "Please choose an answer"
+      feedback.style.color = "red"
+  }
+
 }
 
-// Step 7: Add event listener to the "Submit Answer" button
-document.getElementById("submit-answer").addEventListener("click", checkAnswer);
+
+button.addEventListener("click", function(){
+
+  checkAnswer()
+})
 
 
 
