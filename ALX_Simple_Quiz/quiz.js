@@ -1,6 +1,6 @@
-let feedback = document.getElementById("feedback");
+let feedback = document.getElementById ("feedback");
 
-let button = document.getElementById("submit-answer");
+let button = document.getElementById ("submit-answer");
 
 
 
@@ -16,7 +16,7 @@ function checkAnswer() {
 
     let userAnswer = selectedOption.value;
 
-    if(userAnswer === correctAnswer){
+    if (userAnswer === correctAnswer){
       feedback.textContent = "Correct! Well done."
       feedback.style.color = "green"
     }else{
