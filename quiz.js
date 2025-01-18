@@ -32,7 +32,8 @@ function checkAnswer() {
 }
 
 
-button.addEventListener("click", function(){
+button.addEventListener("click",checkAnswer)
+{
 
   checkAnswer()
 })
