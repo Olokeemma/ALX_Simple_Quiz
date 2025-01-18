@@ -33,11 +33,8 @@ function checkAnswer() {
 
 
 button.addEventListener("click",checkAnswer)
-{
 
-  checkAnswer()
-})
-
+}
 
 
 
